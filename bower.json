@@ -1,0 +1,18 @@
+{
+	"name": "jquery.kyco.easyshare",
+	"version": "1.0.0",
+	"homepage": "www.kycosoftware.com",
+	"description": "The simplest way to handle social media buttons.",
+	"main": "dist/jquery.kyco.easyshare.min.js",
+	"authors": [
+		"Cornelius Weidmann"
+	],
+	"license": "GPLv3",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
+}
