@@ -52,7 +52,7 @@ kyco.easyShare = function() {
 				var url    = 'https://www.facebook.com/sharer/sharer.php?u=' + SHARE_URL;
 				var opts   = 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left;
 
-				window.open(url, 'google+', opts);
+				window.open(url, 'facebook', opts);
 			});
 
 			// Twitter share button
