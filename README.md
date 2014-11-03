@@ -11,7 +11,7 @@ How to install
 
 Bower: `bower install jquery.kyco.easyshare -D`
 
-Manual: Download or clone and include the minified js file after including jquery (prefarably include it before your closing body tag):
+Manual: Download or clone and include the minified js file after including jquery (preferably include it before your closing body tag):
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="jquery.kyco.easyshare.min.js"></script>
