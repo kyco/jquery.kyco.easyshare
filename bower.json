@@ -1,6 +1,6 @@
 {
 	"name": "jquery.kyco.easyshare",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"homepage": "www.kycosoftware.com",
 	"description": "The simplest way to handle social media buttons.",
 	"main": "dist/jquery.kyco.easyshare.min.js",
