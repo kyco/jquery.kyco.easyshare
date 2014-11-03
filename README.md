@@ -11,16 +11,16 @@ How to install
 
 Bower: `bower install jquery.kyco.easyshare -D`
 
-Manual: Download or clone and include the minified js file after including jquery:
+Manual: Download or clone and include the minified js file after including jquery (prefarably include it before your closing body tag):
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="jquery.kyco.easyshare.min.js"></script>
 
-For default styling include the CSS file:
+For default styling include the CSS file in the HEAD:
 
 	<link rel="stylesheet" href="jquery.kyco.easyshare.css">
 
-Sweet, that's it. Now all you need is some specific markup:
+Sweet, that's it. Now all you need is some specific markup (PS: leave `data-easyshare-url` empty to make it use the current URL instead of a specific one, use `data-easyshare-tweet-text` to pre-populate the tweet):
 
 	<div data-easyshare data-easyshare-url="http://www.kycosoftware.com/">
 		<!-- Total -->
