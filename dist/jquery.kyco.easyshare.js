@@ -3,7 +3,7 @@
 	jquery.kyco.easyshare
 	=====================
 
-	Version 1.0.0
+	Version 1.0.1
 
 	Brought to you by
 	http://www.kycosoftware.com
@@ -85,4 +85,6 @@ kyco.easyShare = function() {
 	}
 };
 
-kyco.easyShare();
+$(document).ready(function() {
+	kyco.easyShare();
+});
