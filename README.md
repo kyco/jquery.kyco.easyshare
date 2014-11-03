@@ -16,8 +16,9 @@ Manual: Download or clone and include the minified js file after including jquer
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="jquery.kyco.easyshare.min.js"></script>
 
-For default styling include the CSS file in the HEAD:
+For default styling include Font Awesome and the CSS file in the HEAD:
 
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="jquery.kyco.easyshare.css">
 
 Sweet, that's it. Now all you need is some specific markup (PS: leave `data-easyshare-url` empty to make it use the current URL instead of a specific one, use `data-easyshare-tweet-text` to pre-populate the tweet):
