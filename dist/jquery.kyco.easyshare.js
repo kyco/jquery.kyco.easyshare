@@ -3,7 +3,7 @@
 	jquery.kyco.easyshare
 	=====================
 
-	Version 1.0.1
+	Version 1.0.2
 
 	Brought to you by
 	http://www.kycosoftware.com
@@ -32,11 +32,11 @@ kyco.easyShare = function() {
 				},
 				dataType: 'json',
 				success: function(response) {
-					_this.find('[data-easyshare-total-count]').html(response.ZeTotal);
+					_this.find('[data-easyshare-total-count]').html(kyco.easyShareApproximate(response.ZeTotal));
 
-					_this.find('[data-easyshare-button-count="facebook"]').html(response.Facebook);
-					_this.find('[data-easyshare-button-count="twitter"]').html(response.Twitter);
-					_this.find('[data-easyshare-button-count="google"]').html(response.Google);
+					_this.find('[data-easyshare-button-count="facebook"]').html(kyco.easyShareApproximate(response.Facebook));
+					_this.find('[data-easyshare-button-count="twitter"]').html(kyco.easyShareApproximate(response.Twitter));
+					_this.find('[data-easyshare-button-count="google"]').html(kyco.easyShareApproximate(response.Google));
 
 					_this.find('[data-easyshare-loader]').fadeOut(500);
 				}
@@ -83,6 +83,63 @@ kyco.easyShare = function() {
 			});
 		});
 	}
+};
+
+/*
+**	kyco.easyShareAddCommas, kyco.easyShareFormatDecimals & kyco.easyShareApproximate
+**	are adapted from https://github.com/nfriedly/approximate-number
+**	Copyright (c) 2014 Nathan Friedly
+**	Licensed under the MIT license
+**	Modified by Cornelius Weidmann
+*/
+kyco.easyShareAddCommas = function(num) {
+	var out    = [];
+	var digits = Math.round(num).toString().split('');
+
+	if (num < 1000) {
+		return num.toString();
+	}
+
+	digits.reverse().forEach(function(digit, i){
+		if (i && i%3 === 0) {
+			out.push(',');
+		}
+
+		out.push(digit);
+	});
+
+	return out.reverse().join('');
+};
+
+kyco.easyShareFormatDecimals = function (num, base) {
+	var workingNum = num/base;
+
+	return workingNum < 10 ? (Math.round(workingNum * 10) / 10) : Math.round(workingNum);
+};
+
+kyco.easyShareApproximate = function(num) {
+	var negative = num < 0;
+	var numString;
+
+	if (negative) {
+		num = Math.abs(num);
+	}
+
+	if (num < 10000) {
+		numString = kyco.easyShareAddCommas(num);
+	} else if (num < 1000000) {
+		numString =  kyco.easyShareFormatDecimals(num, 1000) + 'k';
+	} else if (num < 1000000000) {
+		numString =  kyco.easyShareFormatDecimals(num, 1000000) + 'm';
+	} else {
+		numString =  kyco.easyShareAddCommas(kyco.easyShareFormatDecimals(num,  1000000000)) + 'b';
+	}
+
+	if (negative) {
+		numString = '-' + numString;
+	}
+
+	return numString;
 };
 
 $(document).ready(function() {

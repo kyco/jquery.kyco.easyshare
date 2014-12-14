@@ -1,6 +1,6 @@
 kyco.easyShare
 ==============
-####Version: 1.0.1
+####Version: 1.0.2
 
 The simplest way to handle your social media buttons. All you need is one script!
 
