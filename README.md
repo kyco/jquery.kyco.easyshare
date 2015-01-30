@@ -4,6 +4,8 @@ kyco.easyShare
 
 The simplest way to handle your social media buttons. All you need is one script!
 
+Note: Facebook share counts are not working as my API is getting spammed and hence Facebook is blocking the requests... Unfortunately there is no quick fix for this. I will make the API available shortly so people can host it themselves. Having people not hit my site for the share counts will solve this issue.
+
 Forget loading those clunky SDKs for Facebook, Twitter or Google+. Forget having ugly
 share buttons on your page that appear whenever they choose to, because they load
 at different times. This plugin loads your social media buttons in the background,
