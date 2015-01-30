@@ -31,8 +31,8 @@ For default styling include Font Awesome and the CSS file in the HEAD:
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="jquery.kyco.easyshare.css">
 
-Before you continue, copy the `easyshare.php` API file to your server and remember the path.
-Open `jquery.kyco.easyshare.min.js` and replace `kyco.apiPath` with the path to the copied API file.
+Before you continue, copy the `easyshare.php` file to your server and remember the path.
+Open `jquery.kyco.easyshare.min.js` and replace `kyco.apiPath` with the path to where you copied the file.
 
 ![Replace kyco.apiPath to make sure you connect to the API](http://www.kycosoftware.com/uploads/easyshare/easyshare.png)
 
