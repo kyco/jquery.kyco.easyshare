@@ -3,12 +3,12 @@
 	jquery.kyco.easyshare
 	=====================
 
-	Version 1.1.0
+	Version 1.1.1
 
 	Brought to you by
 	http://www.kycosoftware.com
 
-	Copyright 2014 Cornelius Weidmann
+	Copyright 2015 Cornelius Weidmann
 
 	Distributed under the GPL
 
@@ -24,7 +24,6 @@ kyco.easyShare = function() {
 			var _this     = $(this);
 			var url       = _this.data('easyshare-url');
 			var SHARE_URL = typeof url === 'undefined' || url === '' ? window.location.href : url;
-			var referrer  = document.referrer;
 
 			var countTotal    = _this.find('[data-easyshare-total-count]');
 			var countFacebook = _this.find('[data-easyshare-button-count="facebook"]');
@@ -32,40 +31,31 @@ kyco.easyShare = function() {
 			var countGoogle   = _this.find('[data-easyshare-button-count="google"]');
 			var loader        = _this.find('[data-easyshare-loader]');
 
-			if (referrer !== '') {
-				// Get share counts for Facebook, Twitter and Google+
-				$.ajax({
-					url: kyco.apiPath,
-					type: 'GET',
-					data: {
-						url: SHARE_URL
-					},
-					dataType: 'json',
-					success: function(response) {
-						countTotal.html(kyco.easyShareApproximate(response.Total));
-						countFacebook.html(kyco.easyShareApproximate(response.Facebook));
-						countTwitter.html(kyco.easyShareApproximate(response.Twitter));
-						countGoogle.html(kyco.easyShareApproximate(response.Google));
+			// Get share counts for Facebook, Twitter and Google+
+			$.ajax({
+				url: kyco.apiPath,
+				type: 'GET',
+				data: {
+					url: SHARE_URL
+				},
+				dataType: 'json',
+				success: function(response) {
+					countTotal.html(kyco.easyShareApproximate(response.Total));
+					countFacebook.html(kyco.easyShareApproximate(response.Facebook));
+					countTwitter.html(kyco.easyShareApproximate(response.Twitter));
+					countGoogle.html(kyco.easyShareApproximate(response.Google));
 
-						loader.fadeOut(500);
-					},
-					error: function() {
-						countTotal.html(0);
-						countFacebook.html(0);
-						countTwitter.html(0);
-						countGoogle.html(0);
+					loader.fadeOut(500);
+				},
+				error: function() {
+					countTotal.html(0);
+					countFacebook.html(0);
+					countTwitter.html(0);
+					countGoogle.html(0);
 
-						loader.fadeOut(500);
-					}
-				});
-			} else {
-				countTotal.html(0);
-				countFacebook.html(0);
-				countTwitter.html(0);
-				countGoogle.html(0);
-
-				loader.fadeOut(500);
-			}
+					loader.fadeOut(500);
+				}
+			});
 
 			// Facebook share button
 			_this.find('[data-easyshare-button="facebook"]').click(function() {
