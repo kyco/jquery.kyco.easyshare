@@ -3,7 +3,7 @@
 	jquery.kyco.easyshare
 	=====================
 
-	Version 1.1.1
+	Version 1.1.2
 
 	Brought to you by
 	http://www.kycosoftware.com
@@ -72,7 +72,7 @@ kyco.easyShare = function() {
 
 			// Twitter share button
 			_this.find('[data-easyshare-button="twitter"]').click(function() {
-				var text   = $(this).data('easyshare-tweet-text');
+				var text   = $(this).data('easyshare-tweet-text') || '';
 				var width  = 575;
 				var height = 440;
 				var left   = ($(window).width() - width) / 2;
