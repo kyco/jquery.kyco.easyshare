@@ -12,7 +12,7 @@ styling.
 
 Take a look at the [demo](http://www.kycosoftware.com/projects/demo/easyshare).
 
-_Note: Users using v1.0.2 will have to migrate to the latest version. The v1.0.2 API has been discontinued._
+_Note: The v1.0.2 API has been discontinued. Users of v1.0.2 will have to migrate to the latest version._
 
 How to install
 --------------
