@@ -10,7 +10,7 @@ at different times. This plugin loads your social media buttons in the backgroun
 unobtrusively and simultaneously. And the best part, you get to fully customise the
 styling.
 
-Take a look at the [demo](//www.kycosoftware.com/projects/demo/easyshare).
+Take a look at the [demo](https://www.kycosoftware.com/projects/demo/easyshare).
 
 _Note: The v1.0.2 API has been discontinued. Users of v1.0.2 will have to migrate to the latest version._
 
@@ -34,7 +34,7 @@ For default styling include Font Awesome and the CSS file in the HEAD:
 Before you continue, copy the `easyshare.php` file to your server and remember the path.
 Open `jquery.kyco.easyshare.min.js` and replace `kyco.apiPath` with the path to where you copied the file.
 
-![Replace kyco.apiPath to make sure you connect to the API](//www.kycosoftware.com/uploads/easyshare/easyshare.png)
+![Replace kyco.apiPath to make sure you connect to the API](https://www.kycosoftware.com/uploads/easyshare/easyshare.png)
 
 Copy & paste the markup below to fire it up.
 
