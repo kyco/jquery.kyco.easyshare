@@ -10,7 +10,7 @@ at different times. This plugin loads your social media buttons in the backgroun
 unobtrusively and simultaneously. And the best part, you get to fully customise the
 styling.
 
-Take a look at the [demo](http://www.kycosoftware.com/projects/demo/easyshare).
+Take a look at the [demo](//www.kycosoftware.com/projects/demo/easyshare).
 
 _Note: The v1.0.2 API has been discontinued. Users of v1.0.2 will have to migrate to the latest version._
 
@@ -23,18 +23,18 @@ Manual: Download or clone repo.
 
 Include the minified js file after including jquery (preferably include it before your closing body tag):
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="jquery.kyco.easyshare.min.js"></script>
 
 For default styling include Font Awesome and the CSS file in the HEAD:
 
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="jquery.kyco.easyshare.css">
 
 Before you continue, copy the `easyshare.php` file to your server and remember the path.
 Open `jquery.kyco.easyshare.min.js` and replace `kyco.apiPath` with the path to where you copied the file.
 
-![Replace kyco.apiPath to make sure you connect to the API](http://www.kycosoftware.com/uploads/easyshare/easyshare.png)
+![Replace kyco.apiPath to make sure you connect to the API](//www.kycosoftware.com/uploads/easyshare/easyshare.png)
 
 Copy & paste the markup below to fire it up.
 
@@ -43,7 +43,7 @@ Copy & paste the markup below to fire it up.
 2. `data-easyshare-tweet-text` - use this to pre-populate the tweet
 
 ```
-<div data-easyshare data-easyshare-url="http://www.kycosoftware.com/">
+<div data-easyshare data-easyshare-url="//www.kycosoftware.com/">
 	<!-- Total -->
 	<button data-easyshare-button="total">
 		<span>Total</span>
