@@ -8,7 +8,7 @@ Forget loading those clunky SDKs for Facebook, Twitter and Google+. This plugin
 loads your social media buttons in the background, unobtrusively and simultaneously.
 And the best part, you get to fully customise the styling.
 
-Take a look at the [demo](https://www.kycosoftware.com/projects/demo/easyshare).
+Take a look at the [demo](https://www.kycosoftware.com/code/demo/easyshare).
 
 _Note: The v1.0.2 API has been discontinued. Users of v1.0.2 will have to migrate to the latest version._
 
@@ -17,39 +17,24 @@ How to install
 
 Bower: `bower install jquery.kyco.easyshare --save-dev`
 
-Manual: download/clone repo
-
-Include the minified JS file after including jQuery (preferably before the closing BODY tag):
+Include the minified JS file after including jQuery (preferably before the closing BODY tag).
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="jquery.kyco.easyshare.min.js"></script>
 
-Optionally include Font Awesome and the provided CSS file in the HEAD:
+Optionally include Font Awesome and the provided CSS in the HEAD.
 
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="jquery.kyco.easyshare.css">
 
 Now, copy the `easyshare.php` file to your server and remember the path. Open
-`jquery.kyco.easyshare.min.js` and replace `kyco.apiPath` with the path to where
+`jquery.kyco.easyshare.min.js` and replace `kyco.API_PATH` with the path to where
 you copied the file, e.g. `//my.website.com/path/to/easyshare.php`.
 
 ![Replace kyco.apiPath to make sure you connect to the API](https://www.kycosoftware.com/uploads/easyshare/easyshare.png)
 
 Finally copy & paste the markup below to fire it up.
 
-#####Tips:
-1. Leave `data-easyshare-url` empty or completely remove it to get share counts for the current URL.
-2. For twitter, use `data-easyshare-tweet-text` to pre-populate the tweet.
-
-#####HTTP vs HTTPS:
-1. By default the plugin retrieves share counts for both HTTP and HTTPS.
-2. Increase plugin speed by explicitly setting `data-easyshare-http` or `data-easyshare-https`
-on the main div to force getting share counts for the specified protocol only.
-3. If your site is running HTTP then it is a good idea to add `data-easyshare-http`.
-4. If your site has always been running on HTTPS then add `data-easyshare-https`.
-5. If your site has migrated from HTTP to HTTPS then ignore or add both.
-
-#####Markup:
 ```
 <div data-easyshare data-easyshare-url="https://www.kycosoftware.com/">
 	<!-- Total -->
@@ -82,6 +67,18 @@ on the main div to force getting share counts for the specified protocol only.
 	<div data-easyshare-loader>Loading...</div>
 </div>
 ```
+
+#####Tips:
+1. Leave `data-easyshare-url` empty or completely remove it to get share counts for the current URL.
+2. For twitter, use `data-easyshare-tweet-text` to pre-populate the tweet.
+
+#####HTTP vs HTTPS:
+1. By default the plugin retrieves share counts for both HTTP and HTTPS.
+2. Increase plugin speed by explicitly setting `data-easyshare-http` or `data-easyshare-https`
+on the main div to force getting share counts for the specified protocol only.
+3. If your site is running HTTP then it is a good idea to add `data-easyshare-http`.
+4. If your site has always been running on HTTPS then add `data-easyshare-https`.
+5. If your site has migrated from HTTP to HTTPS then ignore or add both.
 
 Support
 -------
