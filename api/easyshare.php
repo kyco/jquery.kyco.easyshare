@@ -1,8 +1,26 @@
 <?php
+/*
+**
+**  jquery.kyco.easyshare
+**  =====================
+**
+**  Version 1.2.0
+**
+**  Brought to you by
+**  https://www.kycosoftware.com
+**
+**  Copyright 2015 Cornelius Weidmann
+**
+**  Distributed under the GPL
+**
+*/
+
 header('Access-Control-Allow-Origin: *');
 
 if (!empty($_SERVER['HTTP_REFERER'])) {
   define('SHARED_URL', $_GET['url']);
+  define('FLAG_HTTP', $_GET['http'] == 'true' ? TRUE : FALSE);
+  define('FLAG_HTTPS', $_GET['https'] == 'true' ? TRUE : FALSE);
   define('FACEBOOK_API_URL', 'https://graph.facebook.com/?ids=');
   define('TWITTER_API_URL', 'https://urls.api.twitter.com/1/urls/count.json?url=');
   define('GOOGLE_API_URL', 'https://plusone.google.com/_/+1/fastbutton?url=');
@@ -18,6 +36,7 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
     if (isset($response[$url]['shares'])) {
       return intval($response[$url]['shares']);
     }
+
     return 0;
   }
 
@@ -28,6 +47,7 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
     if (isset($response['count'])) {
       return intval($response['count']);
     }
+
     return 0;
   }
 
@@ -39,6 +59,7 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
       $total = intval(str_replace('window.__SSR = {c: ', '', $response[0]));
       return $total;
     }
+
     return 0;
   }
 
@@ -54,10 +75,21 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
     $https_url = preg_replace("/^http:/i", "https:", SHARED_URL);
   }
 
-  $fb_shares = get_fb_shares_count($http_url) + get_fb_shares_count($https_url);
-  $tweets    = get_tweet_count($http_url) + get_tweet_count($https_url);
-  $plusones  = get_plusone_count($http_url) + get_plusone_count($https_url);
-  $total     = $fb_shares + $tweets + $plusones;
+  if ((FLAG_HTTP && FLAG_HTTPS) || (!FLAG_HTTP && !FLAG_HTTPS)) {
+    $fb_shares = get_fb_shares_count($http_url) + get_fb_shares_count($https_url);
+    $tweets    = get_tweet_count($http_url) + get_tweet_count($https_url);
+    $plusones  = get_plusone_count($http_url) + get_plusone_count($https_url);
+  } elseif (FLAG_HTTP) {
+    $fb_shares = get_fb_shares_count($http_url);
+    $tweets    = get_tweet_count($http_url);
+    $plusones  = get_plusone_count($http_url);
+  } else {
+    $fb_shares = get_fb_shares_count($https_url);
+    $tweets    = get_tweet_count($https_url);
+    $plusones  = get_plusone_count($https_url);
+  }
+
+  $total = $fb_shares + $tweets + $plusones;
 
   $response = array(
     'URL'      => SHARED_URL,
