@@ -8,7 +8,7 @@ Forget loading those clunky SDKs for Facebook, Twitter and Google+. This plugin
 loads your social media buttons in the background, unobtrusively and simultaneously.
 And the best part, you get to fully customise the styling.
 
-Take a look at the [demo](https://www.kycosoftware.com/code/demo/easyshare).
+Take a look at the [demo](https://www.kycosoftware.com/code/easyshare/demo).
 
 _Note: The v1.0.2 API has been discontinued. Users of v1.0.2 will have to migrate to the latest version._
 
