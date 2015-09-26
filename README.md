@@ -31,7 +31,7 @@ Now, copy the `easyshare.php` file to your server and remember the path. Open
 `jquery.kyco.easyshare.min.js` and replace `kyco.API_PATH` with the path to where
 you copied the file, e.g. `//my.website.com/path/to/easyshare.php`.
 
-![Replace kyco.apiPath to make sure you connect to the API](https://www.kycosoftware.com/uploads/easyshare/easyshare.png)
+![Replace kyco.apiPath to make sure you connect to the API](https://www.kycosoftware.com/uploads/easyshare/easyshare.png?v=2)
 
 Finally copy & paste the markup below to fire it up.
 
