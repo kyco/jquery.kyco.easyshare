@@ -3,7 +3,7 @@
 **  jquery.kyco.easyshare
 **  =====================
 **
-**  Version 1.2.0
+**  Version 1.2.1
 **
 **  Brought to you by
 **  https://www.kycosoftware.com
@@ -68,7 +68,7 @@ kyco.easyShare = function() {
         var height = 400;
         var left   = ($(window).width() - width) / 2;
         var top    = ($(window).height() - height) / 2;
-        var url    = 'https://www.facebook.com/sharer/sharer.php?u=' + SHARE_URL;
+        var url    = 'https://www.facebook.com/sharer/sharer.php?u=' + easyshares[index].SHARE_URL;
         var opts   = 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left;
 
         window.open(url, 'facebook', opts);
@@ -93,7 +93,7 @@ kyco.easyShare = function() {
         var height = 400;
         var left   = ($(window).width() - width) / 2;
         var top    = ($(window).height() - height) / 2;
-        var url    = 'https://plus.google.com/share?url=' + SHARE_URL;
+        var url    = 'https://plus.google.com/share?url=' + easyshares[index].SHARE_URL;
         var opts   = 'width=' + width + ',height=' + height + ',top=' + top + ',left=' + left;
 
         window.open(url, 'google+', opts);
@@ -149,7 +149,7 @@ kyco.easyShareApproximate = function(num) {
   } else if (num < 1000000000) {
     numString = kyco.easyShareFormatDecimals(num, 1000000) + 'm';
   } else {
-    numString = kyco.easyShareAddCommas(kyco.easyShareFormatDecimals(num,  1000000000)) + 'b';
+    numString = kyco.easyShareAddCommas(kyco.easyShareFormatDecimals(num, 1000000000)) + 'b';
   }
 
   if (negative) {
