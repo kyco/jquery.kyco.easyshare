@@ -4,7 +4,7 @@
 **  jquery.kyco.easyshare
 **  =====================
 **
-**  Version 1.2.1
+**  Version 1.2.2
 **
 **  Brought to you by
 **  https://www.kycosoftware.com

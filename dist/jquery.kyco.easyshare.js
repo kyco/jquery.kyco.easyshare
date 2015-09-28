@@ -3,7 +3,7 @@
 **  jquery.kyco.easyshare
 **  =====================
 **
-**  Version 1.2.1
+**  Version 1.2.2
 **
 **  Brought to you by
 **  https://www.kycosoftware.com
@@ -25,17 +25,17 @@ kyco.easyShare = function() {
 
   if ($('[data-easyshare]').length > 0) {
     $('[data-easyshare]').each(function(index) {
-      easyshares[index] = {};
-      easyshares[index].self = $(this);
-      easyshares[index].url = easyshares[index].self.data('easyshare-url');
-      easyshares[index].countTotal = easyshares[index].self.find('[data-easyshare-total-count]');
+      easyshares[index]               = {};
+      easyshares[index].self          = $(this);
+      easyshares[index].url           = easyshares[index].self.data('easyshare-url');
+      easyshares[index].countTotal    = easyshares[index].self.find('[data-easyshare-total-count]');
       easyshares[index].countFacebook = easyshares[index].self.find('[data-easyshare-button-count="facebook"]');
-      easyshares[index].countTwitter = easyshares[index].self.find('[data-easyshare-button-count="twitter"]');
-      easyshares[index].countGoogle = easyshares[index].self.find('[data-easyshare-button-count="google"]');
-      easyshares[index].loader = easyshares[index].self.find('[data-easyshare-loader]');
-      easyshares[index].FORCE_HTTP = typeof easyshares[index].self.data('easyshare-http') !== 'undefined';
-      easyshares[index].FORCE_HTTPS = typeof easyshares[index].self.data('easyshare-https') !== 'undefined';
-      easyshares[index].SHARE_URL = typeof easyshares[index].url === 'undefined' || easyshares[index].url === '' ? window.location.href : easyshares[index].url;
+      easyshares[index].countTwitter  = easyshares[index].self.find('[data-easyshare-button-count="twitter"]');
+      easyshares[index].countGoogle   = easyshares[index].self.find('[data-easyshare-button-count="google"]');
+      easyshares[index].loader        = easyshares[index].self.find('[data-easyshare-loader]');
+      easyshares[index].FORCE_HTTP    = typeof easyshares[index].self.data('easyshare-http') !== 'undefined';
+      easyshares[index].FORCE_HTTPS   = typeof easyshares[index].self.data('easyshare-https') !== 'undefined';
+      easyshares[index].SHARE_URL     = typeof easyshares[index].url === 'undefined' || easyshares[index].url === '' ? window.location.href : easyshares[index].url;
 
       // Get share counts for Facebook, Twitter and Google+
       $.ajax({
