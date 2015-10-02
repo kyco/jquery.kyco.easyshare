@@ -71,6 +71,7 @@ Finally copy & paste the markup below to fire it up.
 #####Tips:
 1. Leave `data-easyshare-url` empty or completely remove it to get share counts for the current URL.
 2. For twitter, use `data-easyshare-tweet-text` to pre-populate the tweet.
+3. In `api/easyshare.php` change `header('Access-Control-Allow-Origin: *');` to `header('Access-Control-Allow-Origin: http://your.domain.here');` for better security.
 
 #####HTTP vs HTTPS:
 1. By default the plugin retrieves share counts for both HTTP and HTTPS.
