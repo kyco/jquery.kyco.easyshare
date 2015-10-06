@@ -32,12 +32,15 @@ kyco.easyShare = function() {
       easyshares[index].countFacebook = easyshares[index].self.find('[data-easyshare-button-count="facebook"]');
       easyshares[index].countTwitter  = easyshares[index].self.find('[data-easyshare-button-count="twitter"]');
       easyshares[index].countGoogle   = easyshares[index].self.find('[data-easyshare-button-count="google"]');
+      easyshares[index].countLinkedin = easyshares[index].self.find('[data-easyshare-button-count="linkedin"]');
+      easyshares[index].countPinterest= easyshares[index].self.find('[data-easyshare-button-count="pinterest"]');
+      easyshares[index].countXing     = easyshares[index].self.find('[data-easyshare-button-count="xing"]');
       easyshares[index].loader        = easyshares[index].self.find('[data-easyshare-loader]');
       easyshares[index].FORCE_HTTP    = typeof easyshares[index].self.data('easyshare-http') !== 'undefined';
       easyshares[index].FORCE_HTTPS   = typeof easyshares[index].self.data('easyshare-https') !== 'undefined';
       easyshares[index].SHARE_URL     = typeof easyshares[index].url === 'undefined' || easyshares[index].url === '' ? window.location.href : easyshares[index].url;
 
-      // Get share counts for Facebook, Twitter and Google+
+      // Get share counts for Facebook, Twitter, Google+, Linkedin, Pinterest and Xing
       $.ajax({
         url: kyco.API_PATH,
         type: 'GET',
@@ -52,12 +55,18 @@ kyco.easyShare = function() {
           easyshares[index].countFacebook.html(kyco.easyShareApproximate(response.Facebook));
           easyshares[index].countTwitter.html(kyco.easyShareApproximate(response.Twitter));
           easyshares[index].countGoogle.html(kyco.easyShareApproximate(response.Google));
+          easyshares[index].countLinkedin.html(kyco.easyShareApproximate(response.Linkedin));
+          easyshares[index].countPinterest.html(kyco.easyShareApproximate(response.Pinterest));
+          easyshares[index].countXing.html(kyco.easyShareApproximate(response.Xing));
         },
         error: function() {
           easyshares[index].countTotal.html(0);
           easyshares[index].countFacebook.html(0);
           easyshares[index].countTwitter.html(0);
           easyshares[index].countGoogle.html(0);
+          easyshares[index].countLinkedin.html(0);
+          easyshares[index].countPinterest.html(0);
+          easyshares[index].countXing.html(0);
         },
         complete: function() {
           easyshares[index].loader.fadeOut(500);
@@ -99,6 +108,47 @@ kyco.easyShare = function() {
         var opts       = 'width=' + width + ',height=' + height + ',top=' + topOffset + ',left=' + leftOffset;
 
         window.open(url, 'google+', opts);
+      });
+
+      // Linkedin share button
+      easyshares[index].self.find('[data-easyshare-button="linkedin"]').click(function() {
+        var width      = 500;
+        var height     = 400;
+        var leftOffset = ($(window).width() - width) / 2;
+        var topOffset  = ($(window).height() - height) / 2;
+        var url        = 'https://www.linkedin.com/cws/share?url=' + easyshares[index].SHARE_URL;
+        var opts       = 'width=' + width + ',height=' + height + ',top=' + topOffset + ',left=' + leftOffset;
+
+        window.open(url, 'linkedin', opts);
+      });
+
+      // Pinterest share button
+      easyshares[index].self.find('[data-easyshare-button="pinterest"]').click(function() {
+        var width      = 500;
+        var height     = 400;
+        var leftOffset = ($(window).width() - width) / 2;
+        var topOffset  = ($(window).height() - height) / 2;
+        var url        = 'https://www.pinterest.com/pin/create/button/?url=' + easyshares[index].SHARE_URL; 
+        /* To add share-image + description for Pinterest, make sure to add following to url:
+
+          + '&media=http%3A%2F%2Fwww.link.to%2Fimage.jpg&description=Description+Text+Here';
+
+         */
+        var opts       = 'width=' + width + ',height=' + height + ',top=' + topOffset + ',left=' + leftOffset;
+
+        window.open(url, 'pinterest', opts);
+      });
+
+      // Xing share button
+      easyshares[index].self.find('[data-easyshare-button="xing"]').click(function() {
+        var width      = 500;
+        var height     = 400;
+        var leftOffset = ($(window).width() - width) / 2;
+        var topOffset  = ($(window).height() - height) / 2;
+        var url        = 'https://www.xing.com/spi/shares/new?url=' + easyshares[index].SHARE_URL;
+        var opts       = 'width=' + width + ',height=' + height + ',top=' + topOffset + ',left=' + leftOffset;
+
+        window.open(url, 'xing', opts);
       });
     });
   }
