@@ -1,6 +1,6 @@
 kyco.easyShare
 ==============
-####Version: 1.2.2
+####Version: 1.3.0
 
 The simplest way to handle your social media buttons. All you need is one script!
 
@@ -63,6 +63,24 @@ Finally copy & paste the markup below to fire it up.
 		<span>+1</span>
 	</button>
 	<span data-easyshare-button-count="google">0</span>
+
+  <!-- LinkedIn -->
+  <button data-easyshare-button="linkedin">
+    <span class="fa fa-linkedin"></span>
+  </button>
+  <span data-easyshare-button-count="linkedin">0</span>
+
+  <!-- Pinterest -->
+  <button data-easyshare-button="pinterest">
+    <span class="fa fa-pinterest-p"></span>
+  </button>
+  <span data-easyshare-button-count="pinterest">0</span>
+
+  <!-- Xing -->
+  <button data-easyshare-button="xing">
+    <span class="fa fa-xing"></span>
+  </button>
+  <span data-easyshare-button-count="xing">0</span>
 
 	<div data-easyshare-loader>Loading...</div>
 </div>

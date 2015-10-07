@@ -4,7 +4,7 @@
 **  jquery.kyco.easyshare
 **  =====================
 **
-**  Version 1.2.2
+**  Version 1.3.0
 **
 **  Brought to you by
 **  https://www.kycosoftware.com
@@ -79,7 +79,7 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
 
   function get_pinterest_count($url = FALSE) {
       $file_contents = @file_get_contents(PINTEREST_API_URL .urlencode($url));
-      $file_contents = preg_replace('/^receiveCount\((.*)\)$/', "\\1", $file_contents);
+      $file_contents = preg_replace('/^receiveCount\((.*)\)$/', '\\1', $file_contents);
       $response      = json_decode($file_contents, true);
 
       if (isset($response['count'])) {
@@ -107,20 +107,20 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
   $https_url = '';
 
   if ($url_parts['scheme'] == 'https') {
-    $http_url  = preg_replace("/^https:/i", "http:", SHARED_URL);
+    $http_url  = preg_replace('/^https:/i', 'http:', SHARED_URL);
     $https_url = SHARED_URL;
   } else {
     $http_url  = SHARED_URL;
-    $https_url = preg_replace("/^http:/i", "https:", SHARED_URL);
+    $https_url = preg_replace('/^http:/i', 'https:', SHARED_URL);
   }
 
   if ((FLAG_HTTP && FLAG_HTTPS) || (!FLAG_HTTP && !FLAG_HTTPS)) {
-    $fb_shares = get_fb_shares_count($http_url) + get_fb_shares_count($https_url);
-    $tweets    = get_tweet_count($http_url) + get_tweet_count($https_url);
-    $plusones  = get_plusone_count($http_url) + get_plusone_count($https_url);
-    $linkedins = get_linkedin_count($http_url) + get_linkedin_count($https_url);
-    $pins      = get_pinterest_count($http_url) + get_pinterest_count($https_url);
-    $xings     = get_xing_count($http_url) + get_xing_count($https_url);
+    $fb_shares = get_fb_shares_count(SHARED_URL);
+    $tweets    = get_tweet_count(SHARED_URL);
+    $plusones  = get_plusone_count(SHARED_URL);
+    $linkedins = get_linkedin_count(SHARED_URL);
+    $pins      = get_pinterest_count(SHARED_URL);
+    $xings     = get_xing_count(SHARED_URL);
   } elseif (FLAG_HTTP) {
     $fb_shares = get_fb_shares_count($http_url);
     $tweets    = get_tweet_count($http_url);

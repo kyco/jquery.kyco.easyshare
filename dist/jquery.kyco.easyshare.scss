@@ -3,7 +3,7 @@
 **  jquery.kyco.easyshare
 **  =====================
 **
-**  Version 1.2.2
+**  Version 1.3.0
 **
 **  Brought to you by
 **  https://www.kycosoftware.com
@@ -81,6 +81,33 @@ $Arial      : Arial, Helvetica, sans-serif;
 
     &:hover {
       background-color: darken(#d34836, 10%);
+    }
+  }
+
+  [data-easyshare-button="linkedin"] {
+    background-color: #0177b5;
+    text-shadow: 1px 1px 0 darken(#0177b5, 5%);
+
+    &:hover {
+      background-color: darken(#0177b5, 5%);
+    }
+  }
+
+  [data-easyshare-button="pinterest"] {
+    background-color: #bd2126;
+    text-shadow: 1px 1px 0 darken(#bd2126, 5%);
+
+    &:hover {
+      background-color: darken(#bd2126, 5%);
+    }
+  }
+
+  [data-easyshare-button="xing"] {
+    background-color: #006464;
+    text-shadow: 1px 1px 0 darken(#006464, 5%);
+
+    &:hover {
+      background-color: darken(#006464, 5%);
     }
   }
 
