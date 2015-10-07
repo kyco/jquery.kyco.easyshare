@@ -24,7 +24,7 @@ Include the minified JS file after including jQuery (preferably before the closi
 
 Optionally include Font Awesome and the provided CSS in the HEAD.
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="jquery.kyco.easyshare.css">
 
 Now, copy the `easyshare.php` file to your server and remember the path. Open
