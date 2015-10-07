@@ -19,13 +19,13 @@ Bower: `bower install jquery.kyco.easyshare --save-dev`
 
 Include the minified JS file after including jQuery (preferably before the closing BODY tag).
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="jquery.kyco.easyshare.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="jquery.kyco.easyshare.min.js"></script>
 
 Optionally include Font Awesome and the provided CSS in the HEAD.
 
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="jquery.kyco.easyshare.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="jquery.kyco.easyshare.css">
 
 Now, copy the `easyshare.php` file to your server and remember the path. Open
 `jquery.kyco.easyshare.min.js` and replace `kyco.API_PATH` with the path to where
@@ -37,32 +37,32 @@ Finally copy & paste the markup below to fire it up.
 
 ```
 <div data-easyshare data-easyshare-url="https://www.kycosoftware.com/">
-	<!-- Total -->
-	<button data-easyshare-button="total">
-		<span>Total</span>
-	</button>
-	<span data-easyshare-total-count>0</span>
+  <!-- Total -->
+  <button data-easyshare-button="total">
+    <span>Total</span>
+  </button>
+  <span data-easyshare-total-count>0</span>
 
-	<!-- Facebook -->
-	<button data-easyshare-button="facebook">
-		<span class="fa fa-facebook"></span>
-		<span>Share</span>
-	</button>
-	<span data-easyshare-button-count="facebook">0</span>
+  <!-- Facebook -->
+  <button data-easyshare-button="facebook">
+    <span class="fa fa-facebook"></span>
+    <span>Share</span>
+  </button>
+  <span data-easyshare-button-count="facebook">0</span>
 
-	<!-- Twitter -->
-	<button data-easyshare-button="twitter" data-easyshare-tweet-text="">
-		<span class="fa fa-twitter"></span>
-		<span>Tweet</span>
-	</button>
-	<span data-easyshare-button-count="twitter">0</span>
+  <!-- Twitter -->
+  <button data-easyshare-button="twitter" data-easyshare-tweet-text="">
+    <span class="fa fa-twitter"></span>
+    <span>Tweet</span>
+  </button>
+  <span data-easyshare-button-count="twitter">0</span>
 
-	<!-- Google+ -->
-	<button data-easyshare-button="google">
-		<span class="fa fa-google-plus"></span>
-		<span>+1</span>
-	</button>
-	<span data-easyshare-button-count="google">0</span>
+  <!-- Google+ -->
+  <button data-easyshare-button="google">
+    <span class="fa fa-google-plus"></span>
+    <span>+1</span>
+  </button>
+  <span data-easyshare-button-count="google">0</span>
 
   <!-- LinkedIn -->
   <button data-easyshare-button="linkedin">
@@ -82,7 +82,7 @@ Finally copy & paste the markup below to fire it up.
   </button>
   <span data-easyshare-button-count="xing">0</span>
 
-	<div data-easyshare-loader>Loading...</div>
+  <div data-easyshare-loader>Loading...</div>
 </div>
 ```
 
