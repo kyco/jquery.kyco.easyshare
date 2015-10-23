@@ -4,7 +4,7 @@
 **  jquery.kyco.easyshare
 **  =====================
 **
-**  Version 1.3.0
+**  Version 1.3.1
 **
 **  Brought to you by
 **  https://www.kycosoftware.com
@@ -102,6 +102,7 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
       return 0;
     }
 
+  $counts    = $_GET['counts'];
   $url_parts = parse_url(SHARED_URL);
   $http_url  = '';
   $https_url = '';
@@ -115,26 +116,26 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
   }
 
   if ((FLAG_HTTP && FLAG_HTTPS) || (!FLAG_HTTP && !FLAG_HTTPS)) {
-    $fb_shares = get_fb_shares_count(SHARED_URL);
-    $tweets    = get_tweet_count(SHARED_URL);
-    $plusones  = get_plusone_count(SHARED_URL);
-    $linkedins = get_linkedin_count(SHARED_URL);
-    $pins      = get_pinterest_count(SHARED_URL);
-    $xings     = get_xing_count(SHARED_URL);
+    $fb_shares = $counts['facebook'] ? get_fb_shares_count(SHARED_URL) : 0;
+    $tweets    = $counts['twitter'] ? get_tweet_count(SHARED_URL) : 0;
+    $plusones  = $counts['google'] ? get_plusone_count(SHARED_URL) : 0;
+    $linkedins = $counts['linkedin'] ? get_linkedin_count(SHARED_URL) : 0;
+    $pins      = $counts['pinterest'] ? get_pinterest_count(SHARED_URL) : 0;
+    $xings     = $counts['xing'] ? get_xing_count(SHARED_URL) : 0;
   } elseif (FLAG_HTTP) {
-    $fb_shares = get_fb_shares_count($http_url);
-    $tweets    = get_tweet_count($http_url);
-    $plusones  = get_plusone_count($http_url);
-    $linkedins = get_linkedin_count($http_url);
-    $pins      = get_pinterest_count($http_url);
-    $xings     = get_xing_count($http_url);
+    $fb_shares = $counts['facebook'] ? get_fb_shares_count($http_url) : 0;
+    $tweets    = $counts['twitter'] ? get_tweet_count($http_url) : 0;
+    $plusones  = $counts['google'] ? get_plusone_count($http_url) : 0;
+    $linkedins = $counts['linkedin'] ? get_linkedin_count($http_url) : 0;
+    $pins      = $counts['pinterest'] ? get_pinterest_count($http_url) : 0;
+    $xings     = $counts['xing'] ? get_xing_count($http_url) : 0;
   } else {
-    $fb_shares = get_fb_shares_count($https_url);
-    $tweets    = get_tweet_count($https_url);
-    $plusones  = get_plusone_count($https_url);
-    $linkedins = get_linkedin_count($https_url);
-    $pins      = get_pinterest_count($https_url);
-    $xings     = get_xing_count($https_url);
+    $fb_shares = $counts['facebook'] ? get_fb_shares_count($https_url) : 0;
+    $tweets    = $counts['twitter'] ? get_tweet_count($https_url) : 0;
+    $plusones  = $counts['google'] ? get_plusone_count($https_url) : 0;
+    $linkedins = $counts['linkedin'] ? get_linkedin_count($https_url) : 0;
+    $pins      = $counts['pinterest'] ? get_pinterest_count($https_url) : 0;
+    $xings     = $counts['xing'] ? get_xing_count($https_url) : 0;
   }
 
   $total = $fb_shares + $tweets + $plusones + $linkedins + $pins + $xings;

@@ -3,7 +3,7 @@
 **  jquery.kyco.easyshare
 **  =====================
 **
-**  Version 1.3.0
+**  Version 1.3.1
 **
 **  Brought to you by
 **  https://www.kycosoftware.com
@@ -48,7 +48,15 @@ kyco.easyShare = function() {
         data: {
           url: easyshares[index].SHARE_URL,
           http: easyshares[index].FORCE_HTTP,
-          https: easyshares[index].FORCE_HTTPS
+          https: easyshares[index].FORCE_HTTPS,
+          counts: {
+            facebook: easyshares[index].countFacebook.length,
+            twitter: easyshares[index].countTwitter.length,
+            google: easyshares[index].countGoogle.length,
+            linkedin: easyshares[index].countLinkedin.length,
+            pinterest: easyshares[index].countPinterest.length,
+            xing: easyshares[index].countXing.length
+          }
         },
         success: function(response) {
           easyshares[index].countTotal.html(kyco.easyShareApproximate(response.Total));
