@@ -10,7 +10,7 @@ And the best part, you get to fully customise the styling.
 
 Take a look at the [demo](https://www.kycosoftware.com/code/easyshare/demo).
 
-_Note: Twitter has discontinued their tweet count. There is no official means of getting the tweet count and hence it will most probably be removed from this plugin as well.
+_Note: Twitter has discontinued their tweet count. There is no official means of getting the tweet count and hence it will most probably be removed from this plugin as well._
 
 _Note: The v1.0.2 API has been discontinued. Users of v1.0.2 will have to migrate to the latest version._
 
