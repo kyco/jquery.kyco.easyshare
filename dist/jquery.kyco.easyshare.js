@@ -3,7 +3,7 @@
 **  jquery.kyco.easyshare
 **  =====================
 **
-**  Version 1.3.2
+**  Version 1.3.3
 **
 **  Brought to you by
 **  https://www.kycosoftware.com
@@ -30,7 +30,6 @@ kyco.easyShare = function() {
       easyshares[index].url            = easyshares[index].self.data('easyshare-url');
       easyshares[index].countTotal     = easyshares[index].self.find('[data-easyshare-total-count]');
       easyshares[index].countFacebook  = easyshares[index].self.find('[data-easyshare-button-count="facebook"]');
-      easyshares[index].countTwitter   = easyshares[index].self.find('[data-easyshare-button-count="twitter"]');
       easyshares[index].countGoogle    = easyshares[index].self.find('[data-easyshare-button-count="google"]');
       easyshares[index].countLinkedin  = easyshares[index].self.find('[data-easyshare-button-count="linkedin"]');
       easyshares[index].countPinterest = easyshares[index].self.find('[data-easyshare-button-count="pinterest"]');
@@ -51,7 +50,6 @@ kyco.easyShare = function() {
           https: easyshares[index].FORCE_HTTPS,
           counts: {
             facebook: easyshares[index].countFacebook.length,
-            twitter: easyshares[index].countTwitter.length,
             google: easyshares[index].countGoogle.length,
             linkedin: easyshares[index].countLinkedin.length,
             pinterest: easyshares[index].countPinterest.length,
@@ -61,7 +59,6 @@ kyco.easyShare = function() {
         success: function(response) {
           easyshares[index].countTotal.html(kyco.easyShareApproximate(response.Total));
           easyshares[index].countFacebook.html(kyco.easyShareApproximate(response.Facebook));
-          easyshares[index].countTwitter.html(kyco.easyShareApproximate(response.Twitter));
           easyshares[index].countGoogle.html(kyco.easyShareApproximate(response.Google));
           easyshares[index].countLinkedin.html(kyco.easyShareApproximate(response.Linkedin));
           easyshares[index].countPinterest.html(kyco.easyShareApproximate(response.Pinterest));
@@ -70,7 +67,6 @@ kyco.easyShare = function() {
         error: function() {
           easyshares[index].countTotal.html(0);
           easyshares[index].countFacebook.html(0);
-          easyshares[index].countTwitter.html(0);
           easyshares[index].countGoogle.html(0);
           easyshares[index].countLinkedin.html(0);
           easyshares[index].countPinterest.html(0);

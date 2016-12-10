@@ -4,7 +4,7 @@
 **  jquery.kyco.easyshare
 **  =====================
 **
-**  Version 1.3.2
+**  Version 1.3.3
 **
 **  Brought to you by
 **  https://www.kycosoftware.com
@@ -22,7 +22,6 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
   define('FLAG_HTTP', $_GET['http'] == 'true' ? TRUE : FALSE);
   define('FLAG_HTTPS', $_GET['https'] == 'true' ? TRUE : FALSE);
   define('FACEBOOK_API_URL', 'https://graph.facebook.com/?ids=');
-  define('TWITTER_API_URL', 'https://urls.api.twitter.com/1/urls/count.json?url=');
   define('GOOGLE_API_URL', 'https://plusone.google.com/_/+1/fastbutton?url=');
   define('LINKEDIN_API_URL', 'https://www.linkedin.com/countserv/count/share?url=');
   define('PINTEREST_API_URL', 'https://widgets.pinterest.com/v1/urls/count.json?callback=receiveCount&url=');
@@ -43,17 +42,6 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
     return 0;
   }
 
-  function get_tweet_count($url) {
-    $file_contents = @file_get_contents(TWITTER_API_URL . urlencode($url));
-    $response      = json_decode($file_contents, true);
-
-    if (isset($response['count'])) {
-      return intval($response['count']);
-    }
-
-    return 0;
-  }
-
   function get_plusone_count($url) {
     $file_contents = @file_get_contents(GOOGLE_API_URL . urlencode($url));
     preg_match('/window\.__SSR = {c: ([\d]+)/', $file_contents, $response);
@@ -67,40 +55,40 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
   }
 
   function get_linkedin_count($url = FALSE) {
-      $file_contents = @file_get_contents(LINKEDIN_API_URL . urlencode($url) . '&format=json');
-      $response      = json_decode($file_contents, true);
+    $file_contents = @file_get_contents(LINKEDIN_API_URL . urlencode($url) . '&format=json');
+    $response      = json_decode($file_contents, true);
 
-      if (isset($response['count'])) {
-        return intval($response['count']);
-      }
-
-      return 0;
+    if (isset($response['count'])) {
+      return intval($response['count']);
     }
+
+    return 0;
+  }
 
   function get_pinterest_count($url = FALSE) {
-      $file_contents = @file_get_contents(PINTEREST_API_URL .urlencode($url));
-      $file_contents = preg_replace('/^receiveCount\((.*)\)$/', '\\1', $file_contents);
-      $response      = json_decode($file_contents, true);
+    $file_contents = @file_get_contents(PINTEREST_API_URL .urlencode($url));
+    $file_contents = preg_replace('/^receiveCount\((.*)\)$/', '\\1', $file_contents);
+    $response      = json_decode($file_contents, true);
 
-      if (isset($response['count'])) {
-        return intval($response['count']);
-      }
-
-      return 0;
+    if (isset($response['count'])) {
+      return intval($response['count']);
     }
+
+    return 0;
+  }
 
   function get_xing_count($url = FALSE) {
-      $file_contents = @file_get_contents(XING_API_URL . urlencode($url));
-      preg_match('/<span class=\"xing-count top\">([\d]+)/', $file_contents, $response);
+    $file_contents = @file_get_contents(XING_API_URL . urlencode($url));
+    preg_match('/<span class=\"xing-count top\">([\d]+)/', $file_contents, $response);
 
-      if (isset($response[0])) {
-        $total = $response[1];
+    if (isset($response[0])) {
+      $total = $response[1];
 
-        return $total;
-      }
-
-      return 0;
+      return $total;
     }
+
+    return 0;
+  }
 
   $counts    = $_GET['counts'];
   $url_parts = parse_url(SHARED_URL);
@@ -117,21 +105,18 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
 
   if ((FLAG_HTTP && FLAG_HTTPS) || (!FLAG_HTTP && !FLAG_HTTPS)) {
     $fb_shares = $counts['facebook'] ? get_fb_shares_count(SHARED_URL) : 0;
-    $tweets    = $counts['twitter'] ? get_tweet_count(SHARED_URL) : 0;
     $plusones  = $counts['google'] ? get_plusone_count(SHARED_URL) : 0;
     $linkedins = $counts['linkedin'] ? get_linkedin_count(SHARED_URL) : 0;
     $pins      = $counts['pinterest'] ? get_pinterest_count(SHARED_URL) : 0;
     $xings     = $counts['xing'] ? get_xing_count(SHARED_URL) : 0;
   } elseif (FLAG_HTTP) {
     $fb_shares = $counts['facebook'] ? get_fb_shares_count($http_url) : 0;
-    $tweets    = $counts['twitter'] ? get_tweet_count($http_url) : 0;
     $plusones  = $counts['google'] ? get_plusone_count($http_url) : 0;
     $linkedins = $counts['linkedin'] ? get_linkedin_count($http_url) : 0;
     $pins      = $counts['pinterest'] ? get_pinterest_count($http_url) : 0;
     $xings     = $counts['xing'] ? get_xing_count($http_url) : 0;
   } else {
     $fb_shares = $counts['facebook'] ? get_fb_shares_count($https_url) : 0;
-    $tweets    = $counts['twitter'] ? get_tweet_count($https_url) : 0;
     $plusones  = $counts['google'] ? get_plusone_count($https_url) : 0;
     $linkedins = $counts['linkedin'] ? get_linkedin_count($https_url) : 0;
     $pins      = $counts['pinterest'] ? get_pinterest_count($https_url) : 0;
@@ -143,7 +128,6 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
   $response = array(
     'URL'      => SHARED_URL,
     'Facebook' => $fb_shares,
-    'Twitter'  => $tweets,
     'Google'   => $plusones,
     'Linkedin' => $linkedins,
     'Pinterest'=> $pins,
