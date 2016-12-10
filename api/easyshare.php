@@ -4,7 +4,7 @@
 **  jquery.kyco.easyshare
 **  =====================
 **
-**  Version 1.3.1
+**  Version 1.3.2
 **
 **  Brought to you by
 **  https://www.kycosoftware.com
@@ -36,8 +36,8 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
     $file_contents = @file_get_contents(FACEBOOK_API_URL . $url);
     $response      = json_decode($file_contents, true);
 
-    if (isset($response[$url]['shares'])) {
-      return intval($response[$url]['shares']);
+    if (isset($response[$url]['share'])) {
+      return intval($response[$url]['share']['share_count']);
     }
 
     return 0;
