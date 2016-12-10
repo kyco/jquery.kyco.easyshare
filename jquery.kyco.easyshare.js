@@ -18,7 +18,7 @@
 
 var kyco = kyco || {};
 
-kyco.API_PATH = '../api/easyshare.php';
+kyco.API_PATH = 'https://www.kycosoftware.com/api/easyshare';
 
 kyco.easyShare = function() {
   var easyshares = [];
