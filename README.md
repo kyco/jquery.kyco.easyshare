@@ -48,18 +48,18 @@ Finally copy & paste the markup below to fire it up.
   </button>
   <span data-easyshare-button-count="facebook">0</span>
 
-  <!-- Twitter -->
-  <button data-easyshare-button="twitter" data-easyshare-tweet-text="">
-    <span class="fa fa-twitter"></span>
-    <span>Tweet</span>
-  </button>
-
   <!-- Google+ -->
   <button data-easyshare-button="google">
     <span class="fa fa-google-plus"></span>
     <span>+1</span>
   </button>
   <span data-easyshare-button-count="google">0</span>
+
+  <!-- Twitter -->
+  <button data-easyshare-button="twitter" data-easyshare-tweet-text="" style="margin-right:15px;">
+    <span class="fa fa-twitter"></span>
+    <span>Tweet</span>
+  </button>
 
   <div data-easyshare-loader>Loading...</div>
 </div>
