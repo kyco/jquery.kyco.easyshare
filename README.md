@@ -81,7 +81,7 @@ on the main div to force getting share counts for the specified protocol only.
 Support
 -------
 
-_Note: Twitter has discontinued their tweet count. There is no official means of getting the tweet count and hence it will most probably be removed from this plugin as well._
+_Note: Twitter has discontinued their tweet count. There is no official means of getting the tweet count and hence it has been removed from this plugin._
 
 _Note: The v1.0.2 API has been discontinued. Users of v1.0.2 will have to migrate to the latest version._
 
