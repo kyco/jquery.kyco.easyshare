@@ -34,18 +34,18 @@
     </button>
     <span data-easyshare-total-count>0</span>
 
+    <!-- Twitter -->
+    <button data-easyshare-button="twitter" data-easyshare-tweet-text="">
+      <span class="fa fa-twitter"></span>
+      <span>Tweet</span>
+    </button>
+
     <!-- Facebook -->
     <button data-easyshare-button="facebook">
       <span class="fa fa-facebook"></span>
       <span>Share</span>
     </button>
     <span data-easyshare-button-count="facebook">0</span>
-
-    <!-- Twitter -->
-    <button data-easyshare-button="twitter" data-easyshare-tweet-text="">
-      <span class="fa fa-twitter"></span>
-      <span>Tweet</span>
-    </button>
 
     <!-- Google+ -->
     <button data-easyshare-button="google">
@@ -54,10 +54,112 @@
     </button>
     <span data-easyshare-button-count="google">0</span>
 
+    <!-- LinkedIn -->
+    <button data-easyshare-button="linkedin">
+      <span class="fa fa-linkedin"></span>
+    </button>
+    <span data-easyshare-button-count="linkedin">0</span>
+
+    <!-- Pinterest -->
+    <button data-easyshare-button="pinterest">
+      <span class="fa fa-pinterest-p"></span>
+    </button>
+    <span data-easyshare-button-count="pinterest">0</span>
+
+    <!-- Xing -->
+    <button data-easyshare-button="xing">
+      <span class="fa fa-xing"></span>
+    </button>
+    <span data-easyshare-button-count="xing">0</span>
+
+    <div data-easyshare-loader>Loading...</div>
+  </div>
+  <br>
+
+  <strong>Social count load time impact:</strong><br><br>
+  <div class="advanced" data-easyshare data-easyshare-url="https://www.kycosoftware.com/">
+    <!-- Twitter -->
+    <button data-easyshare-button="twitter" data-easyshare-tweet-text="">
+      <span class="fa fa-twitter"></span>
+      <span>Tweet</span>
+    </button>
+  </div>
+  <br>
+
+  <div class="advanced" data-easyshare data-easyshare-url="https://www.kycosoftware.com/">
+    <!-- Facebook -->
+    <button data-easyshare-button="facebook">
+      <span class="fa fa-facebook"></span>
+      <span>Share</span>
+    </button>
+    <span data-easyshare-button-count="facebook">0</span>
+    <div data-easyshare-loader>Loading...</div>
+  </div>
+  <br>
+
+  <div class="advanced" data-easyshare data-easyshare-url="https://www.kycosoftware.com/">
+    <!-- Google+ -->
+    <button data-easyshare-button="google">
+      <span class="fa fa-google-plus"></span>
+      <span>+1</span>
+    </button>
+    <span data-easyshare-button-count="google">0</span>
+    <div data-easyshare-loader>Loading...</div>
+  </div>
+  <br>
+
+  <div class="advanced" data-easyshare data-easyshare-url="https://www.kycosoftware.com/">
+    <!-- LinkedIn -->
+    <button data-easyshare-button="linkedin">
+      <span class="fa fa-linkedin"></span>
+    </button>
+    <span data-easyshare-button-count="linkedin">0</span>
+    <div data-easyshare-loader>Loading...</div>
+  </div>
+  <br>
+
+  <div class="advanced" data-easyshare data-easyshare-url="https://www.kycosoftware.com/">
+    <!-- Pinterest -->
+    <button data-easyshare-button="pinterest">
+      <span class="fa fa-pinterest-p"></span>
+    </button>
+    <span data-easyshare-button-count="pinterest">0</span>
+    <div data-easyshare-loader>Loading...</div>
+  </div>
+  <br>
+
+  <div class="advanced" data-easyshare data-easyshare-url="https://www.kycosoftware.com/">
+    <!-- Xing -->
+    <button data-easyshare-button="xing">
+      <span class="fa fa-xing"></span>
+    </button>
+    <span data-easyshare-button-count="xing">0</span>
     <div data-easyshare-loader>Loading...</div>
   </div>
 
   <script src="jquery-1.11.3.min.js"></script>
+  <script>
+    $.each($('.advanced [data-easyshare-button-count] + [data-easyshare-loader]'), function(i, e) {
+      var el        = $(e);
+      var done      = false;
+      var attr      = el.prev().attr('data-easyshare-button-count')
+      var target    = document.querySelector('.advanced [data-easyshare-button-count="' + attr + '"] + [data-easyshare-loader]');
+      var startDate = new Date().getTime() / 1000;
+      var endDate;
+
+      var observer = new MutationObserver(function(mutations) {
+        if (!done) {
+          done = true;
+          endDate = new Date().getTime() / 1000;
+          el.after('Loaded in roughly ', (endDate - startDate).toFixed(2), 's');
+        }
+      });
+
+      observer.observe(target, {
+        attributes: true
+      });
+    });
+  </script>
   <script src="jquery.kyco.easyshare.js"></script>
 </body>
 </html>
