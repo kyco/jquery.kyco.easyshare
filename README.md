@@ -1,6 +1,6 @@
 kyco.easyShare
 ==============
-####Version: 1.3.2
+####Version: 1.3.3
 
 The simplest way to handle your social media buttons. All you need is one script!
 
@@ -9,10 +9,6 @@ loads your social media buttons in the background, unobtrusively and simultaneou
 And the best part, you get to fully customise the styling.
 
 Take a look at the [demo](https://www.kycosoftware.com/code/easyshare/demo).
-
-_Note: Twitter has discontinued their tweet count. There is no official means of getting the tweet count and hence it will most probably be removed from this plugin as well._
-
-_Note: The v1.0.2 API has been discontinued. Users of v1.0.2 will have to migrate to the latest version._
 
 How to install
 --------------
@@ -57,7 +53,6 @@ Finally copy & paste the markup below to fire it up.
     <span class="fa fa-twitter"></span>
     <span>Tweet</span>
   </button>
-  <span data-easyshare-button-count="twitter">0</span>
 
   <!-- Google+ -->
   <button data-easyshare-button="google">
@@ -85,6 +80,10 @@ on the main div to force getting share counts for the specified protocol only.
 
 Support
 -------
+
+_Note: Twitter has discontinued their tweet count. There is no official means of getting the tweet count and hence it will most probably be removed from this plugin as well._
+
+_Note: The v1.0.2 API has been discontinued. Users of v1.0.2 will have to migrate to the latest version._
 
 For bugs or improvements please use the [issues tab](https://github.com/kyco/jquery.kyco.easyshare/issues)
 or email [support@kycosoftware.com](mailto:support@kycosoftware.com).
