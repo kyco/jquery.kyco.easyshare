@@ -1,0 +1,6 @@
+/* Custom styling for demo */
+
+h2,
+h2 + p {
+  font-family: monospace;
+}

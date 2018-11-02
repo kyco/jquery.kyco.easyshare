@@ -6,11 +6,7 @@
 **  Version 1.3.3
 **
 **  Brought to you by
-**  https://www.kycosoftware.com
-**
-**  Copyright 2015 Cornelius Weidmann
-**
-**  Distributed under the GPL
+**  https://kyco.io
 **
 */
 
