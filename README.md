@@ -14,7 +14,7 @@ How to install
 
     Download or clone the repo
 
-Include the minified JS file after including jQuery (preferably before the closing `<body>` tag).
+Include the minified JS file after including jQuery (preferably before the closing `<body>` tag, works with jQuery 1, 2 & 3):
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="jquery.kyco.easyshare.min.js"></script>
