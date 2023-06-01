@@ -7,7 +7,7 @@
 **  Version 1.3.3
 **
 **  Brought to you by
-**  https://www.kycosoftware.com
+**  https://www.kyco.io
 **
 **  Copyright 2015 Cornelius Weidmann
 **

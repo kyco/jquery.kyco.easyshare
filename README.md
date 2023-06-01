@@ -26,12 +26,12 @@ Optionally include Font Awesome and the provided CSS in the `<head>` tag.
 
 Now, copy the `api/easyshare.php` file to your server and remember the path. Open `jquery.kyco.easyshare.min.js` and replace `kyco.API_PATH` with the path to where you copied the file, e.g. `//my.website.com/path/to/easyshare.php`.
 
-![Replace kyco.apiPath to make sure you connect to the API](https://www.kycosoftware.com/uploads/easyshare/easyshare.png?v=2)
+![Replace kyco.apiPath to make sure you connect to the API](https://www.kyco.io/uploads/easyshare/easyshare.png?v=2)
 
 Finally copy & paste the markup below to fire it up.
 
 ```
-<div data-easyshare data-easyshare-url="https://www.kycosoftware.com/">
+<div data-easyshare data-easyshare-url="https://www.kyco.io/">
   <!-- Total -->
   <button data-easyshare-button="total">
     <span>Total</span>
